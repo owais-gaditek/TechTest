@@ -1,0 +1,289 @@
+// Import Bootstrap and custom styles
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #0056b3;
+    }
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-list {
+    margin: 0;
+    padding: 0;
+
+    .article-item {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        padding: 15px;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #dc3545;
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.875rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 5px;
+
+            &:hover {
+                background-color: #c82333;
+            }
+        }
+    }
+}
+
+.article-item {
+    display: flex;
+    align-items: flex-start;
+    /* Align items to the start */
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 16px;
+    /* Add spacing between articles */
+}
+
+/* Container for the article image */
+.article-image-container {
+    width: 160px;
+    /* Fixed width for the image container */
+    height: 160px;
+    /* Fixed height for the image container */
+    margin-right: 16px;
+    /* Space between image and content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    /* Optional: rounded corners for the container */
+    background-color: #ddd;
+    cursor: pointer;
+    /* Optional: background color for empty space */
+}
+
+/* Article image styling */
+.article-image {
+    width: 100%;
+    /* Make image fit container width */
+    height: 100%;
+    /* Make image fit container height */
+    object-fit: cover;
+    /* Ensure image covers the area */
+}
+
+/* Article content styling */
+.article-content {
+    flex: 1;
+    /* Allow content to take the remaining space */
+}
+
+.article-title {
+    font-size: 1.25rem;
+    margin: 0 0 8px;
+    /* Space below title */
+}
+
+.article-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 16px;
+    /* Space below description */
+}
+
+.article-buttons {
+    margin-top: 16px;
+    /* Space above buttons */
+}
+
+/* Image link styling */
+.image-link {
+    display: block;
+}
+
+.image-link:hover .article-image {
+    opacity: 0.8;
+}
+
+// Modal Styles
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* resources/sass/app.scss */
+
+.toast-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    /* Adjust as needed */
+    z-index: 1050;
+    /* Ensure it's on top of other content */
+}
+
+.toast {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #343a40;
+    /* Default background color for the toast */
+    color: #fff;
+    /* Default text color */
+    border-radius: 0.25rem;
+    opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    /* Toast border radius */
+}
+
+.toast-body {
+    flex: 1;
+    padding: 1rem;
+    /* Padding for the content */
+}
+.toast.show {
+    opacity: 1;
+}
+.btn-close {
+    position: absolute;
+    top: 13px;
+    right: 0.6rem;
+    color: #fff;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    opacity: 0.7;
+    z-index: 1060;
+}
+
+.toast-success {
+    background-color: #28a745;
+    /* Green background for success */
+}
+
+.toast-error {
+    background-color: #dc3545;
+    /* Red background for error */
+}
+
+
+/* resources/sass/app.scss */
+
+.pagination-container {
+    .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .page-item {
+        margin: 0 0.2rem;
+    }
+
+    .page-link {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.25;
+        color: #007bff;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+
+        &:hover {
+            color: #0056b3;
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+    }
+
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: #fff;
+        border-color: #dee2e6;
+    }
+}
+
+
+
+

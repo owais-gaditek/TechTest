@@ -1,66 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+**Technical Documentation for "TechTest"**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Installation:**
+composer install
+npm install
+npm run dev
 
-## About Laravel
+**Overview**
+This documentation contains a comprehensive guide for the "TechTest" project as given by We
+Connect, including backend development with Laravel, frontend development with JavaScript
+and CSS preprocessors, AWS integration, algorithm complexity analysis, and PL/SQL script
+implementation. The goal is to implement a complete solution that involves a RESTful API, a
+web page for displaying articles, AWS services integration, and optimized algorithms.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Tools and Technologies Used:**
+I have used all the latest stable versions as instructed in the requirements
+• PHP 8
+• Laravel 9
+• JavaScript
+• MySQL
+• LESS and CSS preprocessors for front end
+• AWS Services (EC2, S3, Lambda, RDS)
+• GIT
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Project Access and Repository:**
+• GitHub Repository: TechTest Repository
+• Website URL: TechTest Live Site
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**DIRECT LIVE URL’s:**
+http://3.138.67.50/articles
 
-## Learning Laravel
+**Detailed Documentation with Steps:***
+**1. Backend Development**
+**1.1. Laravel Project Setup**
+**1. Create a Laravel Project:**
+composer create-project --prefer-dist laravel/laravel TechTest "9.*"
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**2. Set Up Environment:**
+ Configured the .env file with database credentials and other environment settings.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**1.2. Implement RESTful API**
+**1. Migration for Articles Table:**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+php artisan migrate
 
-## Laravel Sponsors
+**2. Seed the Articles Table:**
+php artisan db:seed –-class=ArticlesTableSeeder
+Seeder File (database/seeders/ArticlesTableSeeder.php):
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**3. CRUD Operations:**
+**Controller:**
+There is an ArticleController which has all the CRUD operations as required
 
-### Premium Partners
+**Registered Routes (routes/api.php):**
+Route::apiResource('articles', ArticleController::class);
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**2. Frontend Development**
+**2.1. Create Web Page**
+**1. HTML Template (resources/views/articles/index.blade.php):**
+There is an index.blade.php file that includes the front-end html of the articles
+There is also an fibonacci.blade.php file that can be checked from the front end as well
 
-## Contributing
+**2. JavaScript For Articles (resources/js/article.js):**
+It contains the JavaScript file for the article operations and utilizing the API’s operations
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**3. SCSS Styling (resources/sass/app.scss):**
+It contains the scss preprocessor file for all the related styling used
 
-## Code of Conduct
+**3. AWS Integration**
+**3.1. Configure AWS Services**
+**1. AWS EC2:**
+• Created EC2 instance and deployed the project for “TechTest”.
+• Set up security groups to allow HTTP/HTTPS traffic and others as needed.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**2. AWS S3:**
+• Created an S3 bucket for storing article images.
+• Configure Laravel to use S3 for file storage on the Application side.
 
-## Security Vulnerabilities
+**3. AWS Lambda:**
+• Set up Lambda functions for serverless backend logic that is doing the
+Optimization of the file uploading on S3 bucket.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**4. AWS RDS:**
+• Create an RDS instance for the database.
+• Provide security permissions as needed.
+• The .env file contains all the credentials needed in application to use RDS for the
+database connection.
 
-## License
+**4. Algorithm Complexity**
+**4.1. Fibonacci Sequence Function**
+**1. PHP Function:**
+function fibonacci($n) {
+ $fib = [0, 1];
+ for ($i = 2; $i <= $n; $i++) {
+ $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
+ }
+ return $fib;
+}
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**2. Time Complexity:**
+o The time complexity of this implementation is O(n), where n is the input number.
+
+**5. PL/SQL**
+**5.1. Stored Procedure**
+**1. PL/SQL Script:**
+CREATE OR REPLACE PROCEDURE GetArticleById (p_id IN NUMBER, p_article
+OUT SYS_REFCURSOR) AS
+BEGIN
+ OPEN p_article FOR
+ SELECT * FROM articles WHERE id = p_id;
+END GetArticleById;
+
+**6. Documentation and Communication**
+**6.1. Summary of Approach**
+• Backend Development: Created a Laravel project with a RESTful API for managing
+articles. Implemented CRUD operations and seeded the database with sample data.
+• Frontend Development: Built a simple web page to display articles, using JavaScript to
+fetch data from the API and SCSS for styling.
+• AWS Integration: Configured AWS services including EC2 for hosting, S3 for storage,
+Lambda for serverless functions, and RDS for the database backend.
+• Algorithm Complexity: Implemented a Fibonacci sequence function with O(n) time
+complexity.
+• PL/SQL: Created a stored procedure to fetch articles by ID.
+
+**6.2. Challenges and Solutions**
+• Challenge: Ensuring the API and frontend were correctly integrated.
+• Solution: Implemented comprehensive testing and debugging to verify data flow
+between the frontend and backend.

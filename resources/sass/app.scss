@@ -1,6 +1,7 @@
 // Import Bootstrap and custom styles
 @import "~bootstrap/scss/bootstrap";
 
+// Base styles
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -9,26 +10,41 @@ body {
     padding: 0;
 }
 
+// Container styles
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+// Header section styles
 header {
-    background-color: #007bff;
+    background-color: #161616 !important;
     color: #fff;
     padding: 20px 0;
     text-align: center;
-
-    .container {
-        max-width: 1500px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
-h1 {
+.header-container {
+    display: inline-block;
+    text-align: center;
+}
+
+.header-container {
+    height: 40px;
+    width: auto;
+}
+
+.header-container .header-title {
     margin: 0;
     font-size: 2rem;
 }
 
+.logo {
+    width: 250px;
+}
+
+// Buttons
 .btn-primary {
     background-color: #007bff;
     border: none;
@@ -44,133 +60,113 @@ h1 {
     }
 }
 
-.container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
-}
+.btn-primary-header {
+    background-color: #020202 !important;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-.article-list {
-    margin: 0;
-    padding: 0;
-
-    .article-item {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 15px;
-        padding: 15px;
-        transition: box-shadow 0.3s ease;
-
-        &:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #dc3545;
-            border: none;
-            color: #fff;
-            padding: 5px 10px;
-            font-size: 0.875rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-right: 5px;
-
-            &:hover {
-                background-color: #c82333;
-            }
-        }
+    &:hover {
+        background-color: #0056b3;
     }
 }
 
+// Article List Styles
 .article-item {
     display: flex;
     align-items: flex-start;
-    /* Align items to the start */
     border: 1px solid #ddd;
     padding: 16px;
     border-radius: 8px;
     background-color: #f9f9f9;
     margin-bottom: 16px;
-    /* Add spacing between articles */
-}
 
-/* Container for the article image */
-.article-image-container {
-    width: 160px;
-    /* Fixed width for the image container */
-    height: 160px;
-    /* Fixed height for the image container */
-    margin-right: 16px;
-    /* Space between image and content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 8px;
-    /* Optional: rounded corners for the container */
-    background-color: #ddd;
-    cursor: pointer;
-    /* Optional: background color for empty space */
-}
+    .article-image-container {
+        width: 160px;
+        height: 160px;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #ddd;
+        cursor: pointer;
+    }
 
-/* Article image styling */
-.article-image {
-    width: 100%;
-    /* Make image fit container width */
-    height: 100%;
-    /* Make image fit container height */
-    object-fit: cover;
-    /* Ensure image covers the area */
-}
+    .article-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-/* Article content styling */
-.article-content {
-    flex: 1;
-    /* Allow content to take the remaining space */
-}
+    .article-content {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
 
-.article-title {
-    font-size: 1.25rem;
-    margin: 0 0 8px;
-    /* Space below title */
-}
+    .article-title {
+        font-size: 1.25rem;
+        margin: 0 0 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-.article-description {
-    font-size: 1rem;
-    color: #666;
-    margin: 0 0 16px;
-    /* Space below description */
-}
+    .article-description-container {
+        position: relative;
+        overflow: hidden;
+        max-height: 4.5em; // Height to fit 3 lines of text
+    }
 
-.article-buttons {
-    margin-top: 16px;
-    /* Space above buttons */
-}
+    .article-description {
+        font-size: 1rem;
+        color: #666;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow-wrap: break-word;
+    }
 
-/* Image link styling */
-.image-link {
-    display: block;
-}
+    // Hover effect to show full text
+    .article-description-container:hover .article-description {
+        max-height: none;
+        overflow: visible;
+        white-space: normal;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
 
-.image-link:hover .article-image {
-    opacity: 0.8;
+    .article-buttons {
+        margin-top: 16px;
+    }
+
+    .image-link {
+        display: block;
+
+        &:hover .article-image {
+            opacity: 0.8;
+        }
+    }
 }
 
 // Modal Styles
@@ -179,16 +175,13 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* resources/sass/app.scss */
-
+// Toast Styles
 .toast-container {
     position: fixed;
     bottom: 0;
     right: 0;
     margin: 1rem;
-    /* Adjust as needed */
     z-index: 1050;
-    /* Ensure it's on top of other content */
 }
 
 .toast {
@@ -196,30 +189,27 @@ h1 {
     display: flex;
     align-items: center;
     background-color: #343a40;
-    /* Default background color for the toast */
     color: #fff;
-    /* Default text color */
     border-radius: 0.25rem;
     opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    /* Toast border radius */
+    transition: opacity 0.5s ease-in-out;
 }
 
 .toast-body {
     flex: 1;
     padding: 1rem;
-    /* Padding for the content */
 }
+
 .toast.show {
     opacity: 1;
 }
+
 .btn-close {
     position: absolute;
     top: 13px;
     right: 0.6rem;
     color: #fff;
     border: none;
-    color: #fff;
     font-size: 15px;
     opacity: 0.7;
     z-index: 1060;
@@ -227,17 +217,13 @@ h1 {
 
 .toast-success {
     background-color: #28a745;
-    /* Green background for success */
 }
 
 .toast-error {
     background-color: #dc3545;
-    /* Red background for error */
 }
 
-
-/* resources/sass/app.scss */
-
+// Pagination Styles
 .pagination-container {
     .pagination {
         display: flex;
@@ -245,45 +231,64 @@ h1 {
         list-style: none;
         padding-left: 0;
         margin: 0;
-    }
 
-    .page-item {
-        margin: 0 0.2rem;
-    }
+        .page-item {
+            margin: 0 2px;
 
-    .page-link {
-        display: block;
-        padding: 0.5rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.25;
-        color: #007bff;
-        text-decoration: none;
-        background-color: #fff;
-        border: 1px solid #dee2e6;
-        border-radius: 0.25rem;
+            .page-link {
+                display: block;
+                padding: 0.5rem 0.75rem;
+                font-size: 1rem;
+                color: #007bff;
+                text-decoration: none;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 0.25rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
 
-        &:hover {
-            color: #0056b3;
-            background-color: #e9ecef;
-            border-color: #dee2e6;
+                &:hover {
+                    background-color: #e9ecef;
+                }
+            }
+
+            &.active .page-link {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
         }
-    }
-
-    .page-item.active .page-link {
-        z-index: 1;
-        color: #fff;
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-    .page-item.disabled .page-link {
-        color: #6c757d;
-        pointer-events: none;
-        background-color: #fff;
-        border-color: #dee2e6;
     }
 }
 
+// Loader Styles
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    z-index: 9999;
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-
+// Overlay Styles
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}

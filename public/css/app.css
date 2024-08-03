@@ -11987,23 +11987,36 @@ body {
   padding: 0;
 }
 
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 header {
-  background-color: #007bff;
+  background-color: #161616 !important;
   color: #fff;
   padding: 20px 0;
   text-align: center;
 }
-header .container {
-  max-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.header-container {
+  display: inline-block;
+  text-align: center;
 }
 
-h1, .h1 {
+.header-container {
+  height: 40px;
+  width: auto;
+}
+
+.header-container .header-title {
   margin: 0;
   font-size: 2rem;
+}
+
+.logo {
+  width: 250px;
 }
 
 .btn-primary {
@@ -12020,126 +12033,100 @@ h1, .h1 {
   background-color: #0056b3;
 }
 
-.container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.article-list {
-  margin: 0;
-  padding: 0;
-}
-.article-list .article-item {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px;
-  padding: 15px;
-  transition: box-shadow 0.3s ease;
-}
-.article-list .article-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.article-list .article-item h2, .article-list .article-item .h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-.article-list .article-item p {
-  margin: 10px 0;
-}
-.article-list .article-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-.article-list .article-item button {
-  background-color: #dc3545;
+.btn-primary-header {
+  background-color: #020202 !important;
   border: none;
   color: #fff;
-  padding: 5px 10px;
-  font-size: 0.875rem;
+  padding: 10px 20px;
+  font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-right: 5px;
 }
-.article-list .article-item button:hover {
-  background-color: #c82333;
+.btn-primary-header:hover {
+  background-color: #0056b3;
 }
 
 .article-item {
   display: flex;
   align-items: flex-start;
-  /* Align items to the start */
   border: 1px solid #ddd;
   padding: 16px;
   border-radius: 8px;
   background-color: #f9f9f9;
   margin-bottom: 16px;
-  /* Add spacing between articles */
 }
-
-/* Container for the article image */
-.article-image-container {
+.article-item .article-image-container {
   width: 160px;
-  /* Fixed width for the image container */
   height: 160px;
-  /* Fixed height for the image container */
   margin-right: 16px;
-  /* Space between image and content */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 8px;
-  /* Optional: rounded corners for the container */
   background-color: #ddd;
   cursor: pointer;
-  /* Optional: background color for empty space */
 }
-
-/* Article image styling */
-.article-image {
+.article-item .article-image {
   width: 100%;
-  /* Make image fit container width */
   height: 100%;
-  /* Make image fit container height */
   -o-object-fit: cover;
      object-fit: cover;
-  /* Ensure image covers the area */
 }
-
-/* Article content styling */
-.article-content {
+.article-item .article-content {
   flex: 1;
-  /* Allow content to take the remaining space */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
-
-.article-title {
+.article-item .article-title {
   font-size: 1.25rem;
   margin: 0 0 8px;
-  /* Space below title */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-.article-description {
+.article-item .article-description-container {
+  position: relative;
+  overflow: hidden;
+  max-height: 4.5em;
+}
+.article-item .article-description {
   font-size: 1rem;
   color: #666;
-  margin: 0 0 16px;
-  /* Space below description */
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow-wrap: break-word;
 }
-
-.article-buttons {
+.article-item .article-description-container:hover .article-description {
+  max-height: none;
+  overflow: visible;
+  white-space: normal;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.article-item .article-buttons {
   margin-top: 16px;
-  /* Space above buttons */
 }
-
-/* Image link styling */
-.image-link {
+.article-item .image-link {
   display: block;
 }
-
-.image-link:hover .article-image {
+.article-item .image-link:hover .article-image {
   opacity: 0.8;
 }
 
@@ -12148,15 +12135,12 @@ h1, .h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* resources/sass/app.scss */
 .toast-container {
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 1rem;
-  /* Adjust as needed */
   z-index: 1050;
-  /* Ensure it's on top of other content */
 }
 
 .toast {
@@ -12164,19 +12148,15 @@ h1, .h1 {
   display: flex;
   align-items: center;
   background-color: #343a40;
-  /* Default background color for the toast */
   color: #fff;
-  /* Default text color */
   border-radius: 0.25rem;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  /* Toast border radius */
 }
 
 .toast-body {
   flex: 1;
   padding: 1rem;
-  /* Padding for the content */
 }
 
 .toast.show {
@@ -12189,7 +12169,6 @@ h1, .h1 {
   right: 0.6rem;
   color: #fff;
   border: none;
-  color: #fff;
   font-size: 15px;
   opacity: 0.7;
   z-index: 1060;
@@ -12197,15 +12176,12 @@ h1, .h1 {
 
 .toast-success {
   background-color: #28a745;
-  /* Green background for success */
 }
 
 .toast-error {
   background-color: #dc3545;
-  /* Red background for error */
 }
 
-/* resources/sass/app.scss */
 .pagination-container .pagination {
   display: flex;
   justify-content: center;
@@ -12213,34 +12189,59 @@ h1, .h1 {
   padding-left: 0;
   margin: 0;
 }
-.pagination-container .page-item {
-  margin: 0 0.2rem;
+.pagination-container .pagination .page-item {
+  margin: 0 2px;
 }
-.pagination-container .page-link {
+.pagination-container .pagination .page-item .page-link {
   display: block;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
-  line-height: 1.25;
   color: #007bff;
   text-decoration: none;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #ddd;
   border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.pagination-container .page-link:hover {
-  color: #0056b3;
+.pagination-container .pagination .page-item .page-link:hover {
   background-color: #e9ecef;
-  border-color: #dee2e6;
 }
-.pagination-container .page-item.active .page-link {
-  z-index: 1;
+.pagination-container .pagination .page-item.active .page-link {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
-.pagination-container .page-item.disabled .page-link {
-  color: #6c757d;
-  pointer-events: none;
-  background-color: #fff;
-  border-color: #dee2e6;
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
 }

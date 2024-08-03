@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FibonacciController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/articles', [ArticleController::class, 'indexView']);
+Route::get('/fibonacci', [FibonacciController::class, 'index'])->name('fibonacci.index');
+Route::post('/fibonacci', [FibonacciController::class, 'calculate'])->name('fibonacci.calculate');

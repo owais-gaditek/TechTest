@@ -16,22 +16,4 @@ use App\Http\Controllers\TestController;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
 Route::apiResource('articles', ArticleController::class);
-
-// // Route::post('/test-upload', [TestController::class, 'upload']);
-// Route::put('/api/articles/{id}', [ArticleController::class, 'update']);
-
-// Route::put('/test', [TestController::class, 'handle']);
-
-// Route::put('/test-simple', function (Request $request) {
-//     return response()->json($request->all());
-// });
-// Route::put('/test', function (Request $request) {
-//     return response()->json([
-//         'title' => $request->input('title'),
-//         'content' => $request->input('content'),
-//     ]);
-// });

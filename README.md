@@ -23,8 +23,7 @@ I have used all the latest stable versions as instructed in the requirements
 • GIT
 
 **Project Access and Repository:**
-• GitHub Repository: TechTest Repository
-• Website URL: TechTest Live Site
+• Website URL: [TechTest Live Site](http://3.138.67.50/articles)
 
 **DIRECT LIVE URL’s:**
 http://3.138.67.50/articles

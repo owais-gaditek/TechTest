@@ -12003,9 +12003,6 @@ header {
 .header-container {
   display: inline-block;
   text-align: center;
-}
-
-.header-container {
   height: 40px;
   width: auto;
 }
@@ -12218,8 +12215,10 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -12244,4 +12243,49 @@ header {
   background: rgba(0, 0, 0, 0.5);
   display: none;
   z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .header-container .header-title {
+    font-size: 1.5rem;
+  }
+  .logo {
+    width: 200px;
+  }
+  .article-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .article-image-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  .article-image {
+    width: 100%;
+    height: auto;
+  }
+  .article-content {
+    display: block;
+  }
+  .article-description-container {
+    max-height: none;
+  }
+}
+@media (max-width: 576px) {
+  .header-container .header-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    width: 150px;
+  }
+  .article-title {
+    font-size: 1.1rem;
+  }
+  .article-description {
+    font-size: 0.9rem;
+  }
 }

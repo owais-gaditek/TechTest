@@ -72,7 +72,7 @@ class ArticleController extends Controller
                     // Invoke Lambda function to process the image
                     $lambdaClient = new LambdaClient([
                         'version' => 'latest',
-                        'region'  => env('AWS_DEFAULT_REGION'), // AWS region
+                        'region'  => 'us-east-2', // AWS region
                     ]);
 
                     $result = $lambdaClient->invoke([
@@ -162,7 +162,7 @@ class ArticleController extends Controller
                 // Optionally invoke Lambda function if needed
                 $lambdaClient = new LambdaClient([
                     'version' => 'latest',
-                    'region'  => env('AWS_DEFAULT_REGION'), // AWS region
+                    'region'  => 'us-east-2', // AWS region
                 ]);
                 
                 $result = $lambdaClient->invoke([

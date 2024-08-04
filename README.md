@@ -38,29 +38,29 @@ http://3.138.67.50/articles
 
 
 
-
-
 **Detailed Documentation with Steps:**
-
 
 
 **1. Backend Development**
 
+
 **1.1. Laravel Project Setup**
 
-**1. Create a Laravel Project:**
+
+**1.1.1. Create a Laravel Project:**
+
  
  composer create-project --prefer-dist laravel/laravel TechTest "9.*"
 
 
-**2. Set Up Environment:**
+**1.1.2. Set Up Environment:**
  
  Configured the .env file with database credentials and other environment settings.
 
 
 **1.2. Implement RESTful API**
 
-**1. Migration for Articles Table:**
+**1.2.1. Migration for Articles Table:**
 
 php artisan migrate
 

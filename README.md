@@ -2,6 +2,7 @@
 
 **Installation:**
 
+- update .env file with all credentials
 - composer install
 - npm install
 - npm run dev
